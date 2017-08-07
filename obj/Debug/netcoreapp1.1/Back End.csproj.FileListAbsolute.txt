@@ -1,0 +1,8 @@
+C:\MME\Codigos\Mimilo\Back End\bin\Debug\netcoreapp1.1\Back End.deps.json
+C:\MME\Codigos\Mimilo\Back End\bin\Debug\netcoreapp1.1\Back End.runtimeconfig.json
+C:\MME\Codigos\Mimilo\Back End\bin\Debug\netcoreapp1.1\Back End.runtimeconfig.dev.json
+c:\MME\Codigos\Mimilo\Back End\bin\Debug\netcoreapp1.1\Back End.dll
+c:\MME\Codigos\Mimilo\Back End\bin\Debug\netcoreapp1.1\Back End.pdb
+c:\MME\Codigos\Mimilo\Back End\obj\Debug\netcoreapp1.1\Back End.AssemblyInfo.cs
+c:\MME\Codigos\Mimilo\Back End\obj\Debug\netcoreapp1.1\Back End.dll
+c:\MME\Codigos\Mimilo\Back End\obj\Debug\netcoreapp1.1\Back End.pdb
