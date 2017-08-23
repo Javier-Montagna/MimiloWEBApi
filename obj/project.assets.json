@@ -9683,16 +9683,16 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\MME\\Codigos\\Mimilo\\Back End\\Back End.csproj",
+      "projectUniqueName": "c:\\MME\\Codigos\\Microsoft Certification\\MimiloWEBApi\\Back End.csproj",
       "projectName": "Back End",
-      "projectPath": "C:\\MME\\Codigos\\Mimilo\\Back End\\Back End.csproj",
-      "outputPath": "C:\\MME\\Codigos\\Mimilo\\Back End\\obj\\",
+      "projectPath": "c:\\MME\\Codigos\\Microsoft Certification\\MimiloWEBApi\\Back End.csproj",
+      "outputPath": "c:\\MME\\Codigos\\Microsoft Certification\\MimiloWEBApi\\obj\\",
       "projectStyle": "PackageReference",
       "originalTargetFrameworks": [
         "netcoreapp1.1"
       ],
       "files": {
-        "lib/netcoreapp1.1/Back End.dll": "C:\\MME\\Codigos\\Mimilo\\Back End\\bin\\placeholder\\netcoreapp1.1\\Back End.dll"
+        "lib/netcoreapp1.1/Back End.dll": "c:\\MME\\Codigos\\Microsoft Certification\\MimiloWEBApi\\bin\\placeholder\\netcoreapp1.1\\Back End.dll"
       },
       "frameworks": {
         "netcoreapp1.1": {
