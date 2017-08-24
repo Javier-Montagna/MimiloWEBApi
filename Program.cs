@@ -17,6 +17,7 @@ namespace Mimilo
                 .UseContentRoot(Directory.GetCurrentDirectory())
                 .UseIISIntegration()
                 .UseStartup<Startup>()
+                .UseIISIntegration()
                 .Build();
 
             host.Run();
