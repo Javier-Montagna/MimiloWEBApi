@@ -18,9 +18,15 @@ namespace Mimilo.Controllers
         }
 
         [HttpGet("GetProducts")]
-       public IEnumerable<IProduct> GetProducts()
+        public IEnumerable<IProduct> GetProducts()
         {
             return _repository.GetAllProducts();
+        }
+
+        [HttpGet("GetTest")]
+        public string TestMethods()
+        {
+            return "Funciona";
         }
     }
 }
