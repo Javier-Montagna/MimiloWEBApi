@@ -23,8 +23,8 @@ namespace Mimilo.Controllers
             return _repository.GetAllProducts();
         }
 
-        [HttpGet("GetTest")]
-        public string TestMethods()
+        [HttpGet("GetTestString")]
+        public string GetTestString()
         {
             return "Funciona";
         }
