@@ -1,0 +1,8 @@
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp1.1\Back End.deps.json
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp1.1\Back End.runtimeconfig.json
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp1.1\Back End.runtimeconfig.dev.json
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp1.1\Back End.dll
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp1.1\Back End.pdb
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp1.1\Back End.AssemblyInfo.cs
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp1.1\Back End.dll
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp1.1\Back End.pdb
