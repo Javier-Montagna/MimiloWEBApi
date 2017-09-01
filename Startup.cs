@@ -46,7 +46,7 @@ namespace Mimilo
             var context = app.ApplicationServices.GetService<MimiloContext>();
             AddTestData(context);
 
-            app.UseCors(builder => builder.WithOrigins("http://localhost:4200"));
+            app.UseCors(builder => builder.WithOrigins("http://localhost:4200","http://mimilo.azurewebsites.net"));
             app.UseMvc();
         }
 
