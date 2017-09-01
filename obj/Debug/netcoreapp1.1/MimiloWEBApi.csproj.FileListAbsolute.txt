@@ -1,0 +1,8 @@
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp1.1\MimiloWEBApi.deps.json
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp1.1\MimiloWEBApi.runtimeconfig.json
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp1.1\MimiloWEBApi.runtimeconfig.dev.json
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp1.1\MimiloWEBApi.dll
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp1.1\MimiloWEBApi.pdb
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp1.1\MimiloWEBApi.AssemblyInfo.cs
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp1.1\MimiloWEBApi.dll
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp1.1\MimiloWEBApi.pdb
