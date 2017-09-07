@@ -1,11 +1,11 @@
 using Mimilo.Interfaces;
-using Mimilo.Models;
 using Microsoft.EntityFrameworkCore;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using Mimilo.Intefaces;
 
 namespace Mimilo.Database
 {
@@ -19,9 +19,15 @@ namespace Mimilo.Database
         }
 
         //Returns all products and their comments/features
-        public IEnumerable<Product> GetAllProducts()
+        public IEnumerable<IProduct> GetAllProducts()
         {
             return _context.Products.ToList();
+        }
+        
+        //Returns all products and their comments/features
+        public IProduct GetProductById(int Id)
+        {
+            return _context.Products.Where(x=> x.ProductId == Id).FirstOrDefault();
         }
     }
 }

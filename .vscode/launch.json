@@ -11,6 +11,7 @@
             "preLaunchTask": "build",
             // If you have changed target frameworks, make sure to update the program path.
             "program": "${workspaceRoot}/bin/Debug/netcoreapp1.1/Back End.dll",
+            "requireExactSource": true,
             "args": [],
             "cwd": "${workspaceRoot}",
             "stopAtEntry": false,

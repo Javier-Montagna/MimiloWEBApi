@@ -23,10 +23,10 @@ namespace Mimilo.Controllers
             return _repository.GetAllProducts();
         }
 
-        [HttpGet("GetTestString")]
-        public string GetTestString()
+        [HttpGet("GetProductById")]
+        public IProduct GetProductById(int Id)
         {
-            return "Funciona";
+            return _repository.GetProductById(Id);
         }
     }
 }
