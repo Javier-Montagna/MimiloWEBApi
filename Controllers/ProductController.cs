@@ -1,7 +1,6 @@
 using System.Collections.Generic;
 using Microsoft.AspNetCore.Cors;
 using Microsoft.AspNetCore.Mvc;
-using Mimilo.Intefaces;
 using Mimilo.Interfaces;
 using Mimilo.Models;
 

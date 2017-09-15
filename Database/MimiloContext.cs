@@ -11,5 +11,6 @@ namespace Mimilo.Database
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<MimiloUser> MimiloUsers { get; set; }
     }
 }

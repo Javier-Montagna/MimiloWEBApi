@@ -1,4 +1,4 @@
-using Mimilo.Intefaces;
+using Mimilo.Interfaces;
 
 namespace Mimilo.Models
 {

@@ -1,5 +1,4 @@
 using System.Collections.Generic;
-using Mimilo.Intefaces;
 using Mimilo.Models;
 
 namespace Mimilo.Interfaces

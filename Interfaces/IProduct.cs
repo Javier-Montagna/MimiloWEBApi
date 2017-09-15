@@ -1,4 +1,4 @@
-namespace Mimilo.Intefaces
+namespace Mimilo.Interfaces
 {
     public interface IProduct
     {
