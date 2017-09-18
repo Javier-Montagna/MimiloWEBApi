@@ -1,28 +1,45 @@
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Mimilo.Interfaces;
 using Mimilo.Models;
+using Mimilo.ViewModels;
 
 namespace Mimilo.Database
 {
     public class MimiloUserRepository : IMimiloUserRepository
     {
         private MimiloContext _context;
+        private readonly RoleManager<MimiloRole> _roleManager;
+        private readonly UserManager<MimiloUser> _userManager;
+        private readonly SignInManager<MimiloUser> _signinManager;
 
-        public MimiloUserRepository(MimiloContext context)
+        public MimiloUserRepository(MimiloContext context, UserManager<MimiloUser> userManager,
+            RoleManager<MimiloRole> roleManager, SignInManager<MimiloUser> signinManager)
         {
             _context = context;
+            _userManager = userManager;
+            _roleManager = roleManager;
+            _signinManager = signinManager;
         }
 
         public List<MimiloUser> GetAllUsers()
         {
-            return _context.MimiloUsers.ToList();
+            return _context.Users.ToList();
         }
 
-        public MimiloUser GetUserByEmailAndPassword(string email, string password)
+        public async Task<SignInResult> LogInUserByEmailAndPassword(LoginViewModel loginUser)
         {
-            return _context.MimiloUsers.Where(x=> x.Email == email && x.PasswordHash  == password).FirstOrDefault();
+            return await _signinManager.PasswordSignInAsync(loginUser.Email, loginUser.Password, false, true);
+            //  _context.Users.Where(x => x.Email == loginUser.Email && x.PasswordHash == "hashPassword").FirstOrDefault();
         }
+
+        public MimiloUser GetUserByEmailAndPassword(LoginViewModel loginUser)
+        {
+            return _context.Users.Where(x => x.Email == loginUser.Email).FirstOrDefault();
+        }
+
     }
 }

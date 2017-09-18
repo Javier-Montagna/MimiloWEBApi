@@ -1,10 +1,11 @@
-C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp2.0\MimiloWEBApi.csproj.CoreCompileInputs.cache
-C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp2.0\MimiloWEBApi.AssemblyInfoInputs.cache
-C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp2.0\MimiloWEBApi.AssemblyInfo.cs
 C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp2.0\MimiloWEBApi.deps.json
 C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp2.0\MimiloWEBApi.runtimeconfig.json
 C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp2.0\MimiloWEBApi.runtimeconfig.dev.json
 C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp2.0\MimiloWEBApi.dll
 C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp2.0\MimiloWEBApi.pdb
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp2.0\MimiloWEBApi.csproj.CoreCompileInputs.cache
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp2.0\MimiloWEBApi.AssemblyInfoInputs.cache
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp2.0\MimiloWEBApi.AssemblyInfo.cs
 C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp2.0\MimiloWEBApi.dll
 C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\obj\Debug\netcoreapp2.0\MimiloWEBApi.pdb
+C:\MME\Codigos\Microsoft Certification\MimiloWEBApi\bin\Debug\netcoreapp2.0\appsettings.json

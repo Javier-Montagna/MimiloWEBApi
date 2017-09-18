@@ -1,9 +1,10 @@
+using Microsoft.AspNetCore.Identity.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore;
 using Mimilo.Models;
 
 namespace Mimilo.Database
 {
-    public class MimiloContext : DbContext
+    public class MimiloContext : IdentityDbContext<MimiloUser, MimiloRole, string>
     {
         public MimiloContext(DbContextOptions<MimiloContext> options)
             : base(options)
@@ -11,6 +12,5 @@ namespace Mimilo.Database
         }
 
         public DbSet<Product> Products { get; set; }
-        public DbSet<MimiloUser> MimiloUsers { get; set; }
     }
 }

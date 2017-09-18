@@ -7,8 +7,8 @@
         {
             "taskName": "build",
             "args": [
-                //"${workspaceRoot}/Back End.csproj"
-                "${workspaceRoot}/project.json"
+                "${workspaceRoot}/MimiloWEBApi.csproj"
+                //"${workspaceRoot}/project.json"
             ],
             "isBuildCommand": true,
             "problemMatcher": "$msCompile"

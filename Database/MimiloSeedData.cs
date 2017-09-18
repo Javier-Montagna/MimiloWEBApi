@@ -27,6 +27,16 @@ namespace Mimilo.Database
 
         private async Task AddUserTestData()
         {
+            _context.Users.Clear();
+            _context.UserRoles.Clear();
+
+            var role = new MimiloRole()
+            {
+                Name = "Administrador",
+                Description = "Capacidad de dominar el mundo conocido",
+            };
+            await _roleManager.CreateAsync(role);
+
             var javierMontagna = new MimiloUser()
             {
                 Name = "Javier",
@@ -36,10 +46,12 @@ namespace Mimilo.Database
             };
 
             await _userManager.CreateAsync(javierMontagna, "Racing1$");
+            await _userManager.AddToRoleAsync(javierMontagna, "Administrador");
         }
 
         private async Task AddProductTestData()
         {
+            _context.Products.Clear();
             var sabanaOrganica = new Product()
             {
                 ProductName = "Sabana organica",

@@ -45,12 +45,14 @@ namespace Mimilo
                 };
             }).AddEntityFrameworkStores<MimiloContext>()
             .AddDefaultTokenProviders();
-            
-            services.AddDbContext<MimiloContext>(opt => opt.UseInMemoryDatabase("Mimilo"));
+
+            services.AddDbContext<MimiloContext>(opt => opt.UseSqlServer(Configuration.GetConnectionString("MimiloDatabase")));
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IMimiloUserRepository, MimiloUserRepository>();
             services.AddTransient<MimiloSeedData>();
-            services.AddMvc();
+            services.AddMvc()
+               .AddViewLocalization()
+               .AddDataAnnotationsLocalization();
         }
 
         // This method gets called by the runtime. Use this method to configure the HTTP request pipeline.
