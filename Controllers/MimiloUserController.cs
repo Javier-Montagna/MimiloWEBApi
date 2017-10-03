@@ -9,6 +9,8 @@ using Mimilo.Models;
 using Mimilo.ViewModels;
 using System.Net.Http;
 using System.Net;
+using Microsoft.Extensions.Logging;
+using ajuaresCubi.Models;
 
 namespace Mimilo.Controllers
 {
@@ -17,10 +19,12 @@ namespace Mimilo.Controllers
     public class MimiloUserController
     {
         private IMimiloUserRepository _mimiloUserRepository;
+        private ILoggerFactory _loggerFactory;
 
-        public MimiloUserController(IMimiloUserRepository mimiloUserRepository)
+        public MimiloUserController(IMimiloUserRepository mimiloUserRepository, ILoggerFactory loggerFactory)
         {
             _mimiloUserRepository = mimiloUserRepository;
+            _loggerFactory = loggerFactory;
         }
 
         [HttpPost("GetUserByEmailAndPassword")]
@@ -30,7 +34,7 @@ namespace Mimilo.Controllers
 
             if (logInResult.Result.IsLockedOut)
             {
-                return new BadRequestObjectResult("Usuario bloqueado");
+                return new BadRequestObjectResult(new CustomError("Usuario bloqueado","GetUserByEmailAndPassword"));
             }
 
             if (logInResult.Result.Succeeded)
@@ -39,7 +43,7 @@ namespace Mimilo.Controllers
                 return new OkObjectResult(user);
             }
 
-            return new BadRequestObjectResult("Mail/Contraseña Invalidos");
+            return new BadRequestObjectResult(new CustomError("Email/Contraseña Invalidos","GetUserByEmailAndPassword"));
         }
 
         [HttpGet("GetAllUsers")]

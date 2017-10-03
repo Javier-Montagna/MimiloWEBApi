@@ -50,6 +50,11 @@ namespace Mimilo
             services.AddScoped<IProductRepository, ProductRepository>();
             services.AddScoped<IMimiloUserRepository, MimiloUserRepository>();
             services.AddTransient<MimiloSeedData>();
+            
+            services.AddCors(options => options.AddPolicy("FilterByDomain", 
+                                                p => p.WithOrigins("http://localhost:4200", "http://mimilo.azurewebsites.net")
+                                                    .AllowAnyMethod()
+                                                    .AllowAnyHeader())); 
             services.AddMvc()
                .AddViewLocalization()
                .AddDataAnnotationsLocalization();
@@ -60,9 +65,11 @@ namespace Mimilo
         {
             loggerFactory.AddConsole(Configuration.GetSection("Logging"));
             loggerFactory.AddDebug();
+            loggerFactory.AddConsole();
 
             var context = app.ApplicationServices.GetService<MimiloContext>();
-            app.UseCors(builder => builder.WithOrigins("http://localhost:4200", "http://mimilo.azurewebsites.net"));
+      
+            app.UseCors("FilterByDomain");
             app.UseMvc();
             seeder.EnsureSeedDate().Wait();
         }
