@@ -11,9 +11,10 @@ using System;
 namespace MimiloWEBApi.Migrations
 {
     [DbContext(typeof(MimiloContext))]
-    partial class MimiloContextModelSnapshot : ModelSnapshot
+    [Migration("20171107174854_AddedShoppingCart")]
+    partial class AddedShoppingCart
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,7 +122,7 @@ namespace MimiloWEBApi.Migrations
 
                     b.HasIndex("ShoppingCartId");
 
-                    b.ToTable("LineItems");
+                    b.ToTable("LineItem");
                 });
 
             modelBuilder.Entity("Mimilo.Models.MimiloRole", b =>
@@ -187,8 +188,6 @@ namespace MimiloWEBApi.Migrations
 
                     b.Property<string>("SecurityStamp");
 
-                    b.Property<int?>("ShoppingCartId");
-
                     b.Property<bool>("TwoFactorEnabled");
 
                     b.Property<string>("UserName")
@@ -203,8 +202,6 @@ namespace MimiloWEBApi.Migrations
                         .IsUnique()
                         .HasName("UserNameIndex")
                         .HasFilter("[NormalizedUserName] IS NOT NULL");
-
-                    b.HasIndex("ShoppingCartId");
 
                     b.ToTable("AspNetUsers");
                 });
@@ -296,13 +293,6 @@ namespace MimiloWEBApi.Migrations
 
                     b.HasOne("Mimilo.Models.ShoppingCart")
                         .WithMany("LineItems")
-                        .HasForeignKey("ShoppingCartId");
-                });
-
-            modelBuilder.Entity("Mimilo.Models.MimiloUser", b =>
-                {
-                    b.HasOne("Mimilo.Models.ShoppingCart", "ShoppingCart")
-                        .WithMany()
                         .HasForeignKey("ShoppingCartId");
                 });
 #pragma warning restore 612, 618

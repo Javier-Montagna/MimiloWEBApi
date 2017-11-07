@@ -33,7 +33,6 @@ namespace Mimilo.Database
         public async Task<SignInResult> LogInUserByEmailAndPassword(LoginViewModel loginUser)
         {
             return await _signinManager.PasswordSignInAsync(loginUser.Email, loginUser.Password, false, true);
-            //  _context.Users.Where(x => x.Email == loginUser.Email && x.PasswordHash == "hashPassword").FirstOrDefault();
         }
 
         public MimiloUser GetUserByEmailAndPassword(LoginViewModel loginUser)

@@ -11,9 +11,10 @@ using System;
 namespace MimiloWEBApi.Migrations
 {
     [DbContext(typeof(MimiloContext))]
-    partial class MimiloContextModelSnapshot : ModelSnapshot
+    [Migration("20171107213204_LineItems")]
+    partial class LineItems
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder

@@ -34,16 +34,21 @@ namespace Mimilo.Controllers
 
             if (logInResult.Result.IsLockedOut)
             {
-                return new BadRequestObjectResult(new CustomError("Usuario bloqueado","GetUserByEmailAndPassword"));
+                return new BadRequestObjectResult(new CustomError("Usuario bloqueado", "GetUserByEmailAndPassword"));
             }
 
             if (logInResult.Result.Succeeded)
             {
                 var user = _mimiloUserRepository.GetUserByEmailAndPassword(loginUser);
-                return new OkObjectResult(user);
+                LoggedUserViewModel loggedUser = new LoggedUserViewModel();
+                loggedUser.Name = user.Name;
+                loggedUser.LastName = user.LastName;
+                loggedUser.Email = user.Email;
+
+                return new OkObjectResult(loggedUser);
             }
 
-            return new BadRequestObjectResult(new CustomError("Email/Contraseña Invalidos","GetUserByEmailAndPassword"));
+            return new BadRequestObjectResult(new CustomError("Email/Contraseña Invalidos", "GetUserByEmailAndPassword"));
         }
 
         [HttpGet("GetAllUsers")]

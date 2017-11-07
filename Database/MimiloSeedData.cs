@@ -1,5 +1,6 @@
 
 using System;
+using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
 using Mimilo.Models;
@@ -21,14 +22,21 @@ namespace Mimilo.Database
 
         public async Task EnsureSeedDate()
         {
+            _context.Users.Clear();
+            _context.UserRoles.Clear();
+            _context.Products.Clear();
+            _context.LineItems.Clear();
+            _context.ShoppingCarts.Clear();
+
             await AddProductTestData();
+            await AddLineItemTestData();
+            await AddShoppingCartTestData();
             await AddUserTestData();
         }
 
         private async Task AddUserTestData()
         {
-            _context.Users.Clear();
-            _context.UserRoles.Clear();
+
 
             var role = new MimiloRole()
             {
@@ -42,7 +50,8 @@ namespace Mimilo.Database
                 Name = "Javier",
                 LastName = "Montagna",
                 Email = "javiermontagna@gmail.com",
-                UserName = "javiermontagna@gmail.com"
+                UserName = "javiermontagna@gmail.com",
+                ShoppingCart = _context.ShoppingCarts.ToList().FirstOrDefault(),
             };
 
             await _userManager.CreateAsync(javierMontagna, "Racing1$");
@@ -51,7 +60,7 @@ namespace Mimilo.Database
 
         private async Task AddProductTestData()
         {
-            _context.Products.Clear();
+
             var sabanaOrganica = new Product()
             {
                 ProductName = "Sabana organica",
@@ -125,6 +134,34 @@ namespace Mimilo.Database
             };
             _context.Products.Add(protectoresMamarios);
 
+            await _context.SaveChangesAsync();
+        }
+
+        private async Task AddLineItemTestData()
+        {
+            LineItem lineItem1 = new LineItem()
+            {
+                Quantity = 2,
+                Product = _context.Products.ToList().Where(x => x.ProductName == "Cesto contenedor").FirstOrDefault(),
+            };
+
+            LineItem lineItem2 = new LineItem()
+            {
+                Quantity = 3,
+                Product = _context.Products.ToList().Where(x => x.ProductName == "Protectores Mamarios").FirstOrDefault()
+            };
+
+            _context.LineItems.Add(lineItem1);
+            _context.LineItems.Add(lineItem2);
+
+            await _context.SaveChangesAsync();
+        }
+
+        private async Task AddShoppingCartTestData()
+        {
+            ShoppingCart shoppingCart = new ShoppingCart();
+            shoppingCart.LineItems = _context.LineItems.ToList();
+            _context.ShoppingCarts.Add(shoppingCart);
             await _context.SaveChangesAsync();
         }
     }

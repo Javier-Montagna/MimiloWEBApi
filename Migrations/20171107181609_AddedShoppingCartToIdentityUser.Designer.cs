@@ -11,9 +11,10 @@ using System;
 namespace MimiloWEBApi.Migrations
 {
     [DbContext(typeof(MimiloContext))]
-    partial class MimiloContextModelSnapshot : ModelSnapshot
+    [Migration("20171107181609_AddedShoppingCartToIdentityUser")]
+    partial class AddedShoppingCartToIdentityUser
     {
-        protected override void BuildModel(ModelBuilder modelBuilder)
+        protected override void BuildTargetModel(ModelBuilder modelBuilder)
         {
 #pragma warning disable 612, 618
             modelBuilder
@@ -121,7 +122,7 @@ namespace MimiloWEBApi.Migrations
 
                     b.HasIndex("ShoppingCartId");
 
-                    b.ToTable("LineItems");
+                    b.ToTable("LineItem");
                 });
 
             modelBuilder.Entity("Mimilo.Models.MimiloRole", b =>

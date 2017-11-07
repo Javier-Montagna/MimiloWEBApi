@@ -12,5 +12,7 @@ namespace Mimilo.Database
         }
 
         public DbSet<Product> Products { get; set; }
+        public DbSet<ShoppingCart> ShoppingCarts { get; set; }
+        public DbSet<LineItem> LineItems { get; set; }
     }
 }
