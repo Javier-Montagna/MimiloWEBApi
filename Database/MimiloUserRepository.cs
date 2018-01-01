@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Identity;
+using Microsoft.EntityFrameworkCore;
 using Mimilo.Interfaces;
 using Mimilo.Models;
 using Mimilo.ViewModels;
@@ -37,8 +38,11 @@ namespace Mimilo.Database
 
         public MimiloUser GetUserByEmailAndPassword(LoginViewModel loginUser)
         {
-            return _context.Users.Where(x => x.Email == loginUser.Email).FirstOrDefault();
+            return _context.Users.Where(x => x.Email == loginUser.Email)
+                .Include(y => y.ShoppingCart)
+                .ThenInclude(z => z.LineItems)
+                .ThenInclude(x => x.Product)
+                .FirstOrDefault();
         }
-
     }
 }

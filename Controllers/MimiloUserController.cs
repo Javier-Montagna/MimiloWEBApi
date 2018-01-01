@@ -16,7 +16,7 @@ namespace Mimilo.Controllers
 {
     [Route("api/[controller]")]
     [ValidateModel]
-    public class MimiloUserController
+    public class MimiloUserController : Controller
     {
         private IMimiloUserRepository _mimiloUserRepository;
         private ILoggerFactory _loggerFactory;
@@ -40,10 +40,36 @@ namespace Mimilo.Controllers
             if (logInResult.Result.Succeeded)
             {
                 var user = _mimiloUserRepository.GetUserByEmailAndPassword(loginUser);
+                var lineItems = new List<LineItem>();
+
+                foreach (LineItem li in user.ShoppingCart.LineItems)
+                {
+                    lineItems.Add(new LineItem
+                    {
+                        LineItemId = li.LineItemId,
+                        Quantity = li.Quantity,
+                        Product = new Product()
+                        {
+                            ProductId = li.Product.ProductId,
+                            ProductName = li.Product.ProductName,
+                            ReleaseDate = li.Product.ReleaseDate,
+                            Price = li.Product.Price,
+                            TitleDescription = li.Product.TitleDescription,
+                            ShortDescription = li.Product.ShortDescription,
+                            LongDescription = li.Product.LongDescription,
+                            CoverImageUrl = li.Product.CoverImageUrl
+                        }
+                    });
+                }
                 LoggedUserViewModel loggedUser = new LoggedUserViewModel();
                 loggedUser.Name = user.Name;
                 loggedUser.LastName = user.LastName;
                 loggedUser.Email = user.Email;
+                loggedUser.shoppingCart = new ShoppingCart()
+                {
+                    ShoppingCartId = user.ShoppingCart.ShoppingCartId,
+                    LineItems = lineItems
+                };
 
                 return new OkObjectResult(loggedUser);
             }
